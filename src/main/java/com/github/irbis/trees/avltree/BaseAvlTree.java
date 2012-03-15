@@ -8,29 +8,25 @@ import java.util.List;
  *
  * @author A.Nadtochey<irbis@github.com>
  */
-public class BaseAvlTree<K, V, T extends BinaryTreeTraverser<K, V>> 
-    extends BinaryTree<K, V, AvlTreeNode<K, V>, T> {
+public class BaseAvlTree<E, T extends BinaryTreeTraverser<E>> 
+    extends BinaryTree<E, AvlTreeNode<E>, T> {
         
-    public BaseAvlTree(AvlTreeNode<K, V> rootNode, T traverser) {
+    public BaseAvlTree(AvlTreeNode<E> rootNode, T traverser) {
         super(rootNode, traverser);
     }
     
-    public BaseAvlTree(K key, V value, T traverser) {
-        super(new AvlTreeNode<K, V>(key, value), traverser);
+    public BaseAvlTree(E element, T traverser) {
+        super(new AvlTreeNode<E>(element), traverser);
     }
     
     @Override
-    public void put(K key, V value) {
+    public void put(E element) {
         
     }
 
     @Override
-    public List<K> keys() {
-        return traverser.keys(rootNode);
+    public List<E> traverse() {
+        return traverser.traverse(rootNode);
     }
     
-    @Override
-    public List<V> values() {
-        return traverser.values(rootNode);
-    }
 }

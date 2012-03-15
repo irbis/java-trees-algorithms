@@ -6,10 +6,8 @@ import java.util.List;
  *
  * @author A.Nadtochey<irbis@github.com>
  */
-public abstract class BinaryTreeTraverser<K, V> {
+public abstract class BinaryTreeTraverser<E> {
     
-    public abstract List<K> keys(BinaryTreeNode<K, V> tree);
-
-    public abstract List<V> values(BinaryTreeNode<K, V> tree);
+    public abstract List<E> traverse(BinaryTreeNode<E> tree);
     
 }

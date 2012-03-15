@@ -4,35 +4,28 @@ package com.github.irbis.trees.binarytree;
  *
  * @author A.Nadtochey<irbis@github.com>
  */
-public class BinaryTreeNodeImpl<K, V> implements BinaryTreeNode<K, V> {
-    protected BinaryTreeNodeImpl left = null;
-    protected BinaryTreeNodeImpl right = null;
+public class BinaryTreeNodeImpl<E> implements BinaryTreeNode<E> {
+    protected BinaryTreeNode left = null;
+    protected BinaryTreeNode right = null;
     
-    protected final K key;
-    protected final V value;
+    protected final E element;
 
-    public BinaryTreeNodeImpl(K key, V value) {
-        this.key = key;
-        this.value = value;
+    public BinaryTreeNodeImpl(E element) {
+        this.element = element;
     }
 
     @Override
-    public K getKey() {
-        return key;
+    public E get() {
+        return element;
     }
 
     @Override
-    public V getValue() {
-        return value;
-    }
-
-    @Override
-    public BinaryTreeNodeImpl getLeft() {
+    public BinaryTreeNode<E> getLeft() {
         return left;
     }
 
     @Override
-    public BinaryTreeNodeImpl getRight() {
+    public BinaryTreeNode<E> getRight() {
         return right;
     }
 
@@ -52,32 +45,32 @@ public class BinaryTreeNodeImpl<K, V> implements BinaryTreeNode<K, V> {
     }
     
     @Override
-    public BinaryTreeNodeImpl<K, V> attachLeftNode(BinaryTreeNodeImpl<K, V> leftNode) {
-        BinaryTreeNodeImpl<K, V> oldLeft = left;
+    public BinaryTreeNode<E> attachLeftNode(BinaryTreeNode<E> leftNode) {
+        BinaryTreeNode<E> oldLeft = left;
         this.left = leftNode;
         
         return oldLeft;
     }
 
     @Override
-    public BinaryTreeNodeImpl<K, V> detachLeftNode() {
-        BinaryTreeNodeImpl<K, V> oldLeft = this.left;
+    public BinaryTreeNode<E> detachLeftNode() {
+        BinaryTreeNode<E> oldLeft = this.left;
         this.left = null;
         
         return oldLeft;
     }
     
     @Override
-    public BinaryTreeNodeImpl<K, V> attachRightNode(BinaryTreeNodeImpl<K, V> rightNode) {
-        BinaryTreeNodeImpl<K, V> oldRight = right;
+    public BinaryTreeNode<E> attachRightNode(BinaryTreeNode<E> rightNode) {
+        BinaryTreeNode<E> oldRight = right;
         this.right = rightNode;
         
         return oldRight;
     }
     
     @Override
-    public BinaryTreeNodeImpl<K, V> detachRightNode() {
-        BinaryTreeNodeImpl<K, V> oldRight = right;
+    public BinaryTreeNode<E> detachRightNode() {
+        BinaryTreeNode<E> oldRight = right;
         this.right = null;
         
         return oldRight;
@@ -85,7 +78,7 @@ public class BinaryTreeNodeImpl<K, V> implements BinaryTreeNode<K, V> {
 
     @Override
     public String toString() {
-        return key.toString() + "=" + value.toString();
+        return element.toString();
     }
     
     

@@ -6,8 +6,8 @@ import java.util.List;
  *
  * @author A.Nadtochey<irbis@github.com>
  */
-public abstract class BinaryTree<K, V, N extends BinaryTreeNode<K, V>, 
-        T extends BinaryTreeTraverser<K, V>> {
+public abstract class BinaryTree<E, N extends BinaryTreeNode<E>,
+        T extends BinaryTreeTraverser<E>> {
     protected final N rootNode;
     protected final T traverser;
 
@@ -16,13 +16,10 @@ public abstract class BinaryTree<K, V, N extends BinaryTreeNode<K, V>,
         this.traverser = traverser;
     }
 
-    public abstract void put(K key, V value);
+    public abstract void put(E element);
     
-    public List<K> keys() {
-        return traverser.keys(rootNode);
+    public List<E> traverse() {
+        return traverser.traverse(rootNode);
     }
     
-    public List<V> values() {
-        return traverser.values(rootNode);
-    }
 }

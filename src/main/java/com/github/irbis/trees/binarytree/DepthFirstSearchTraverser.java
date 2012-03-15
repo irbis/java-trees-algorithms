@@ -8,35 +8,22 @@ import java.util.List;
  *
  * @author A.Nadtochey<irbis@github.com>
  */
-public class DepthFirstSearchTraverser<K, V> extends BinaryTreeTraverser<K, V> {    
+public class DepthFirstSearchTraverser<E> extends BinaryTreeTraverser<E> {    
     @Override
-    public List<K> keys(BinaryTreeNode<K, V> tree) {
-        List<BinaryTreeNode<K, V>> nodes = new LinkedList<BinaryTreeNode<K, V>>();
+    public List<E> traverse(BinaryTreeNode<E> tree) {
+        List<BinaryTreeNode<E>> nodes = new LinkedList<BinaryTreeNode<E>>();
         
         if (nodes.isEmpty()) toList(nodes, tree);
-        List<K> keys = new ArrayList<K>(nodes.size());
+        List<E> elements = new ArrayList<E>(nodes.size());
         
-        for (BinaryTreeNode<K, V> node : nodes)
-            keys.add(node.getKey());
+        for (BinaryTreeNode<E> node : nodes)
+            elements.add(node.get());
         
-        return keys;
+        return elements;
     }
     
-    @Override
-    public List<V> values(BinaryTreeNode<K, V> tree) {
-        List<BinaryTreeNode<K, V>> nodes = new LinkedList<BinaryTreeNode<K, V>>();
-        
-        if (nodes.isEmpty()) toList(nodes, tree);
-        List<V> values = new ArrayList<V>(nodes.size());
-        
-        for (BinaryTreeNode<K, V> node : nodes)
-            values.add(node.getValue());
-        
-        return values;
-    }
-    
-    private void toList(List<BinaryTreeNode<K, V>> nodes, 
-            BinaryTreeNode<K, V> node) {
+    private void toList(List<BinaryTreeNode<E>> nodes, 
+            BinaryTreeNode<E> node) {
         if (node == null) return; // empty tree
         
         if (node.hasLeft()) toList(nodes, node.getLeft());

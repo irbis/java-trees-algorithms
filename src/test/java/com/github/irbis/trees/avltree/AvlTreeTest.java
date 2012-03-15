@@ -16,15 +16,12 @@ public class AvlTreeTest {
      */
     @Test
     public void testAvlTreeWithOneNode() {
-        AvlTree<Integer, String> avlTree = new AvlTree<Integer, String>(1, "node1");
-        List<Integer> expectedKeys = new ArrayList<Integer>();
-        List<String> expectedValues = new ArrayList<String>();
+        AvlTree<Integer> avlTree = new AvlTree<Integer>(1);
+        List<Integer> expectedElements = new ArrayList<Integer>();
         
-        expectedKeys.add(1);
-        expectedValues.add("node1");
+        expectedElements.add(1);
         
-        assertEquals(expectedKeys, avlTree.keys());
-        assertEquals(expectedValues, avlTree.values());
+        assertEquals(expectedElements, avlTree.traverse());
     }
     
     /**
@@ -34,21 +31,16 @@ public class AvlTreeTest {
      */
     @Test
     public void testAvlTreeWithTwoNodes() {
-        AvlTree<Integer, String> avlTree = new AvlTree<Integer, String>(1, "node1");
+        AvlTree<Integer> avlTree = new AvlTree<Integer>(1);
         
-        avlTree.put(2, "node2");
+        avlTree.put(2);
         
-        List<Integer> expectedKeys = new ArrayList<Integer>();
-        List<String> expectedValues = new ArrayList<String>();
+        List<Integer> expectedElements = new ArrayList<Integer>();
         
-        expectedKeys.add(1);
-        expectedKeys.add(2);
-        expectedValues.add("node1");
-        expectedValues.add("node2");
+        expectedElements.add(1);
+        expectedElements.add(2);
         
-        assertEquals(expectedKeys, avlTree.keys());
-        assertEquals(expectedValues, avlTree.values());
-        
+        assertEquals(expectedElements, avlTree.traverse());
     }
     
     /**
@@ -58,23 +50,18 @@ public class AvlTreeTest {
      */
     @Test
     public void testAvlTreeWithThreeNodes() {
-        AvlTree<Integer, String> avlTree = new AvlTree<Integer, String>(1, "node1");
+        AvlTree<Integer> avlTree = new AvlTree<Integer>(1);
         
-        avlTree.put(2, "node2");
-        avlTree.put(3, "node3");
+        avlTree.put(2);
+        avlTree.put(3);
         
-        List<Integer> expectedKeys = new ArrayList<Integer>();
-        List<String> expectedValues = new ArrayList<String>();
+        List<Integer> expectedElements = new ArrayList<Integer>();
         
-        expectedKeys.add(1);
-        expectedKeys.add(2);
-        expectedKeys.add(3);
-        expectedValues.add("node1");
-        expectedValues.add("node2");
-        expectedValues.add("node3");
+        expectedElements.add(1);
+        expectedElements.add(2);
+        expectedElements.add(3);
         
-        assertEquals(expectedKeys, avlTree.keys());
-        assertEquals(expectedValues, avlTree.values());
+        assertEquals(expectedElements, avlTree.traverse());
         
     }
 }

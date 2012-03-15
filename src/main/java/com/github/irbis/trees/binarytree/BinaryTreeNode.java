@@ -4,23 +4,21 @@ package com.github.irbis.trees.binarytree;
  *
  * @author A.Nadtochey<irbis@github.com>
  */
-public interface BinaryTreeNode<K, V> {
+public interface BinaryTreeNode<E> {
 
-    BinaryTreeNodeImpl<K, V> attachLeftNode(BinaryTreeNodeImpl<K, V> leftNode);
+    BinaryTreeNode<E> attachLeftNode(BinaryTreeNode<E> leftNode);
 
-    BinaryTreeNodeImpl<K, V> attachRightNode(BinaryTreeNodeImpl<K, V> rightNode);
+    BinaryTreeNode<E> attachRightNode(BinaryTreeNode<E> rightNode);
 
-    BinaryTreeNodeImpl<K, V> detachLeftNode();
+    BinaryTreeNode<E> detachLeftNode();
 
-    BinaryTreeNodeImpl<K, V> detachRightNode();
+    BinaryTreeNode<E> detachRightNode();
 
-    K getKey();
+    E get();
 
-    BinaryTreeNodeImpl getLeft();
+    BinaryTreeNode<E> getLeft();
 
-    BinaryTreeNodeImpl getRight();
-
-    V getValue();
+    BinaryTreeNode<E> getRight();
 
     boolean hasLeft();
 
