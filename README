@@ -1,0 +1,3 @@
+Different types of tree written on Java5 with generics. Classes use C++ approach
+to organize classes hierarchy. Generics uses not only to store type of data of
+tree, but to select and specify tree operations: put data, tree traversers, etc.
