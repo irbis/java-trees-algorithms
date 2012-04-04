@@ -1,7 +1,10 @@
 package com.github.irbis.trees.binarytree;
 
 /**
- *
+ * <p>
+ * A default implementation of binary tree node interface. Implementation
+ * requires to specify element for every node.
+ * </p>
  * @author A.Nadtochey<irbis@github.com>
  */
 public class BinaryTreeNodeImpl<E> implements BinaryTreeNode<E> {
@@ -10,6 +13,10 @@ public class BinaryTreeNodeImpl<E> implements BinaryTreeNode<E> {
     
     protected final E element;
 
+    /**
+     * Create binary tree node.
+     * @param element element to save in the tree node.
+     */
     public BinaryTreeNodeImpl(E element) {
         this.element = element;
     }

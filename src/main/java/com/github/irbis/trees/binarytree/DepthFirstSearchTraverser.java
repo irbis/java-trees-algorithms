@@ -5,7 +5,10 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- *
+ * <p>
+ * An implementation of binary tree traverser which uses depth first search
+ * (DFS) algorithm to traverse binary tree.
+ * </p>
  * @author A.Nadtochey<irbis@github.com>
  */
 public class DepthFirstSearchTraverser<E> extends BinaryTreeTraverser<E> {    
