@@ -8,7 +8,8 @@ import java.util.List;
  *
  * @author A.Nadtochey<irbis@github.com>
  */
-public class BaseAvlTree<E, T extends BinaryTreeTraverser<E>> 
+public class BaseAvlTree<E extends Comparable<E>, 
+        T extends BinaryTreeTraverser<E>> 
     extends BinaryTree<E, AvlTreeNode<E>, T> {
         
     public BaseAvlTree(AvlTreeNode<E> rootNode, T traverser) {
@@ -18,15 +19,14 @@ public class BaseAvlTree<E, T extends BinaryTreeTraverser<E>>
     public BaseAvlTree(E element, T traverser) {
         super(new AvlTreeNode<E>(element), traverser);
     }
-    
-    @Override
-    public void put(E element) {
-        
-    }
 
     @Override
     public List<E> traverse() {
         return traverser.traverse(rootNode);
+    }
+    
+    @Override
+    public void put(E element) {
     }
     
 }
