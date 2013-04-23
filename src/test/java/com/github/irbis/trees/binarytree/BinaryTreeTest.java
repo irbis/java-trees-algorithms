@@ -26,7 +26,7 @@ public class BinaryTreeTest {
     @Test
     public void testContainsTreeWithOneNode() {
         BinaryTreeNode<Integer> rootNode = new BinaryTreeNodeImpl<Integer>(2);
-        MockBinaryTree tree = new MockBinaryTree(rootNode);
+        MockBinaryTree<Integer> tree = new MockBinaryTree<Integer>(rootNode);
         
         assertTrue(tree.contains(2));
         assertFalse(tree.contains(1));
@@ -34,7 +34,7 @@ public class BinaryTreeTest {
     
     @Test
     public void testContainsTreeWithTwoNodesLeft() {
-        MockBinaryTree tree = new MockBinaryTree(
+        MockBinaryTree<Integer> tree = new MockBinaryTree<Integer>(
                 TestBinaryTreeUtils.createTreeWithTwoElementsLeft());
         
         assertTrue(tree.contains(1));
@@ -44,7 +44,7 @@ public class BinaryTreeTest {
     
     @Test
     public void testContainsTreeWithTwoNodesRight() {
-        MockBinaryTree tree = new MockBinaryTree(
+        MockBinaryTree<Integer> tree = new MockBinaryTree<Integer>(
                 TestBinaryTreeUtils.createTreeWithTwoElementsRight());
         
         assertTrue(tree.contains(3));
@@ -54,7 +54,7 @@ public class BinaryTreeTest {
     
     @Test
     public void testContainsTreeWithThreeNodes() {
-        MockBinaryTree tree = new MockBinaryTree(
+        MockBinaryTree<Integer> tree = new MockBinaryTree<Integer>(
                 TestBinaryTreeUtils.createTreeWithThreeElements());
         
         assertTrue(tree.contains(1));
@@ -65,7 +65,7 @@ public class BinaryTreeTest {
     
     @Test
     public void testContainsTreeWithEightNodes() {
-        MockBinaryTree tree = new MockBinaryTree(
+        MockBinaryTree<Integer> tree = new MockBinaryTree<Integer>(
                 TestBinaryTreeUtils.createTreeWithEightElements());
         
         assertTrue(tree.contains(4));

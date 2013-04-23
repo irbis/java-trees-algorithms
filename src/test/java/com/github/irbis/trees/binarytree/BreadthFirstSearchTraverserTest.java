@@ -36,7 +36,7 @@ public class BreadthFirstSearchTraverserTest {
      */
     @Test
     public void testTreeNodeBreadthFirstSearch2NodesLeftTree() {
-        BinaryTreeNode rootNode = 
+        BinaryTreeNode<Integer> rootNode = 
                 TestBinaryTreeUtils.createTreeWithTwoElementsLeft();
         BreadthFirstSearchTraverser<Integer> bfs = 
                 new BreadthFirstSearchTraverser<Integer>();

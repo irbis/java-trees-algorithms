@@ -8,8 +8,8 @@ package com.github.irbis.trees.binarytree;
  * @author A.Nadtochey<irbis@github.com>
  */
 public class BinaryTreeNodeImpl<E> implements BinaryTreeNode<E> {
-    protected BinaryTreeNode left = null;
-    protected BinaryTreeNode right = null;
+    protected BinaryTreeNode<E> left = null;
+    protected BinaryTreeNode<E> right = null;
     
     protected final E element;
 
