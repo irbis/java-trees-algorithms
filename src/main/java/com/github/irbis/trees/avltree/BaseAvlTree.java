@@ -1,16 +1,19 @@
 package com.github.irbis.trees.avltree;
 
-import com.github.irbis.trees.binarytree.BinaryTreeTraverser;
-import com.github.irbis.trees.binarytree.BinaryTree;
 import java.util.List;
+
+import com.github.irbis.trees.binarytree.BinaryTreeTraverser;
+import com.github.irbis.trees.binarytree.ComparableBinaryTree;
 
 /**
  *
  * @author A.Nadtochey<irbis@github.com>
+ * @param <E> type of elements AVL tree stores.
+ * @param <T> type of tree traverser.
  */
 public class BaseAvlTree<E extends Comparable<E>, 
         T extends BinaryTreeTraverser<E>> 
-    extends BinaryTree<E, AvlTreeNode<E>, T> {
+    extends ComparableBinaryTree<E, T> {
         
     public BaseAvlTree(AvlTreeNode<E> rootNode, T traverser) {
         super(rootNode, traverser);
@@ -27,6 +30,26 @@ public class BaseAvlTree<E extends Comparable<E>,
     
     @Override
     public void put(E element) {
+        put((AvlTreeNode<E>) rootNode, element); 
     }
-    
+
+    private void put(AvlTreeNode<E> node, E element) {
+        E nodeElement = node.get();
+        int compareResult = element.compareTo(nodeElement);
+        
+        if (compareResult == 0) return;
+        
+        AvlTreeNode<E> newNode = new AvlTreeNode<E>(element);
+        if (compareResult < 0) {
+            if (!node.hasLeft())
+                node.attachLeftNode(newNode);
+            else
+                put(node.getLeft(), element);
+        } else {
+            if (!node.hasRight())
+                node.attachRightNode(newNode);
+            else
+                put(node.getRight(), element);
+        }
+    }  
 }

@@ -40,5 +40,5 @@ public class ComparableBinaryTree<E extends Comparable<E>,
                 put(node.getRight(), element);
         }
     }
-    
+        
 }
